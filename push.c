@@ -2,13 +2,15 @@
 
 void p_push(stack_t **stack, unsigned int counter)
 {
-    int n, j = 0, z;
+    int n, i = 0, z;
 
     if (val)
     {
-        for (j = 0; val[j] != '\0'; j++)
+        if (val[0] == '-')
+            i++;
+        for (; val[i] != '\0'; i++)
         {
-            if (val[j] > '9' || val[j] < '0')
+            if (val[i] > '9' || val[i] < '0')
             {
                 z = 1;
             }
@@ -16,6 +18,7 @@ void p_push(stack_t **stack, unsigned int counter)
         if (z == 1)
         {
             fprintf(stderr, "L%d: usage: push integer\n", counter);
+            fclose(file);
             free_stack(*stack);
             exit(EXIT_FAILURE);
         }
