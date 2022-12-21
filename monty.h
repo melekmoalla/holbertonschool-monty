@@ -1,20 +1,11 @@
-#ifndef INV_TREE_H
-#define INV_TREE_H
-
+#ifndef MONTY_H
+#define MONTY_H
 #include <stdio.h>
-#include <unistd.h>
 #include <stdlib.h>
-#include <string.h>
 #include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <fcntl.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <string.h>
 #include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include <fcntl.h>
+#include <string.h>
 #include <ctype.h>
 
 char *val;
@@ -26,7 +17,7 @@ char *val;
  * @next: points to the next element of the stack (or queue)
  *
  * Description: doubly linked list node structure
- * for stack, queues, LIFO, FIFO DHK project
+ * for stack, queues, LIFO, FIFO Holberton project
  */
 typedef struct stack_s
 {
@@ -36,12 +27,12 @@ typedef struct stack_s
 } stack_t;
 
 /**
- * struct instruction_s - opcoode and its function
+ * struct instruction_s - opcode and its function
  * @opcode: the opcode
  * @f: function to handle the opcode
  *
  * Description: opcode and its function
- * for stack, queues, LIFO, FIFO DHK project
+ * for stack, queues, LIFO, FIFO Holberton project
  */
 typedef struct instruction_s
 {
@@ -49,9 +40,10 @@ typedef struct instruction_s
     void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-int execute(char *cont, stack_t **stack, int number);
+void p_push(stack_t **stack, unsigned int count);
+void p_pall(stack_t **stack, __attribute__((unused)) unsigned int count);
+void execute(char *cont, stack_t **stack, unsigned int count);
 void free_stack(stack_t *stack);
-void f_push(stack_t **stack, unsigned int line_number);
-void pall(stack_t **stack, unsigned int line_number);
-int digits(char *value);
+void add_node(stack_t **stack, int n);
+
 #endif

@@ -1,35 +1,40 @@
 #include "monty.h"
-
-int execute(char *cont, stack_t **stack, int number)
+/**
+ * execute - executes the opcode
+ * @stack: head linked list - stack
+ * @counter: line_counter
+ * @file: poiner to monty file
+ * @content: line content
+ * Return: no return
+ */
+void execute(char *cont, stack_t **stack, unsigned int count)
 {
 
-    instruction_t func[] = {
-        {"push", f_push},
-        {"pall", pall},
-        {NULL, NULL}};
+    instruction_t opst[] = {{"push", p_push},
+                            {"pall", p_pall},
+                            {NULL, NULL}};
 
     int i = 0;
     char *op;
 
-    op = strtok(cont, " \a\n\t");
+    op = strtok(cont, " \n\t");
 
-    val = strtok(NULL, " \a\n\t");
+    val = strtok(NULL, " \n\t");
 
-    while (func[i].opcode && op)
+    while (opst[i].opcode && op)
     {
-        if (strcmp(op, func[i].opcode) == 0)
+        if (strcmp(op, opst[i].opcode) == 0)
         {
-            func[i].f(stack, number);
-            return (0);
+            opst[i].f(stack, count);
+            return;
         }
         i++;
     }
-    if (op && func[i].opcode == NULL)
+    if (op && opst[i].opcode == NULL)
     {
-        fprintf(stderr, "L%u: unknown instruction %s\n", number, cont);
+        fprintf(stderr, "L%d: unknown instruction %s\n", count, op);
         free(cont);
         free_stack(*stack);
         exit(EXIT_FAILURE);
     }
-    return (1);
 }
