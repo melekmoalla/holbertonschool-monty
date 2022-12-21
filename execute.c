@@ -7,7 +7,7 @@
  * @content: line content
  * Return: no return
  */
-void execute(char *cont, stack_t **stack, unsigned int count, FILE *file)
+int execute(char *cont, stack_t **stack, unsigned int count, FILE *file)
 {
 
     instruction_t opst[] = {{"push", p_push},
@@ -26,7 +26,7 @@ void execute(char *cont, stack_t **stack, unsigned int count, FILE *file)
         if (strcmp(op, opst[i].opcode) == 0)
         {
             opst[i].f(stack, count);
-            return;
+            return (0);
         }
         i++;
     }
@@ -38,4 +38,5 @@ void execute(char *cont, stack_t **stack, unsigned int count, FILE *file)
         free_stack(*stack);
         exit(EXIT_FAILURE);
     }
+    return (1);
 }
