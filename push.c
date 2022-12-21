@@ -28,8 +28,8 @@ void p_push(stack_t **stack, unsigned int counter)
             free_stack(*stack);
             exit(EXIT_FAILURE);
         }
-        n = atoi(val);
-
-        add_node(stack, n);
     }
+    n = atoi(val);
+
+    add_node(stack, n);
 }
