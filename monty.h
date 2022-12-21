@@ -9,7 +9,7 @@
 #include <ctype.h>
 
 char *val;
-FILE *file;
+
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -46,5 +46,6 @@ void p_pall(stack_t **stack, __attribute__((unused)) unsigned int count);
 int execute(char *cont, stack_t **stack, unsigned int count, FILE *file);
 void free_stack(stack_t *stack);
 void add_node(stack_t **stack, int n);
+void p_pint(stack_t **stack, unsigned int counter);
 
 #endif

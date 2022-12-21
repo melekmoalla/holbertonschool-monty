@@ -12,6 +12,7 @@ int execute(char *cont, stack_t **stack, unsigned int count, FILE *file)
 
     instruction_t opst[] = {{"push", p_push},
                             {"pall", p_pall},
+                            {"pint", p_pint},
                             {NULL, NULL}};
 
     int i = 0;
