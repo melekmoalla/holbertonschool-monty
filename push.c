@@ -13,6 +13,7 @@ void p_push(stack_t **stack, unsigned int counter)
                 fprintf(stderr, "L%d: usage: push integer\n", counter);
                 free_stack(*stack);
                 exit(EXIT_FAILURE);
+                break;
             }
         }
     }

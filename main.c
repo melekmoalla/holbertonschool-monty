@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     file = fopen(argv[1], "r");
     if (file == NULL)
     {
-        fprintf(stderr, "Erroe: Can't open file %s\n", argv[1]);
+        fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
         exit(EXIT_FAILURE);
     }
     while (read > 0)
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
         count++;
         if (read > 0)
         {
-            execute(cont, &stack, count);
+            execute(cont, &stack, count,file);
         }
         free(cont);
     }
