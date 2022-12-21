@@ -7,7 +7,11 @@ void p_swap(stack_t **stack, unsigned int counter)
 
     h = *stack;
     if (h == NULL)
-        return;
+    {
+        fprintf(stderr, "L%d: can't swap, stack too short\n", counter);
+        free_stack(*stack);
+        exit(EXIT_FAILURE);
+    }
     while (h)
     {
         h = h->next;
