@@ -49,4 +49,5 @@ void add_node(stack_t **stack, int n);
 void p_pall(stack_t **stack, __attribute__((unused)) unsigned int count);
 void p_pint(stack_t **stack, unsigned int counter);
 void p_pop(stack_t **stack, unsigned int counter);
+void p_swap(stack_t **stack, unsigned int counter);
 #endif
