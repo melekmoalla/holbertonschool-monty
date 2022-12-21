@@ -7,7 +7,7 @@ void p_pop(stack_t **stack, unsigned int counter)
     h = *stack;
     if (h == NULL)
     {
-        fprintf(stderr, "L%d: can't pint, stack empty\n", counter);
+        fprintf(stderr, "L%d: can't pop an empty stack\n", counter);
         free_stack(*stack);
         exit(EXIT_FAILURE);
     }
