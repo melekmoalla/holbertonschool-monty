@@ -18,20 +18,15 @@ void p_push(stack_t **stack, unsigned int counter)
         if (z == 1)
         {
             fprintf(stderr, "L%d: usage: push integer\n", counter);
-            fclose(file);
             free_stack(*stack);
             exit(EXIT_FAILURE);
         }
     }
-
     else
     {
-        {
-            fprintf(stderr, "L%d: usage: push integer\n", counter);
-            fclose(file);
-            free_stack(*stack);
-            exit(EXIT_FAILURE);
-        }
+        fprintf(stderr, "L%d: usage: push integer\n", counter);
+        free_stack(*stack);
+        exit(EXIT_FAILURE);
     }
     n = atoi(val);
 

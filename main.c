@@ -3,10 +3,10 @@
 int main(int argc, char *argv[])
 {
     char *cont;
-    FILE *file;
     size_t size = 0;
     ssize_t read = 1;
     stack_t *stack = NULL;
+    FILE *file;
     unsigned int count = 0;
 
     if (argc != 2)
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
         count++;
         if (read > 0)
         {
-            execute(cont, &stack, count,file);
+            execute(cont, &stack, count, file);
         }
         free(cont);
     }
