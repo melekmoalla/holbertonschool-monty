@@ -7,7 +7,7 @@
  * @content: line content
  * Return: no return
  */
-void execute(char *cont, stack_t **stack, unsigned int count)
+void execute(char *cont, stack_t **stack, unsigned int count, FILE *file)
 {
 
     instruction_t opst[] = {{"push", p_push},
@@ -33,6 +33,7 @@ void execute(char *cont, stack_t **stack, unsigned int count)
     if (op && opst[i].opcode == NULL)
     {
         fprintf(stderr, "L%d: unknown instruction %s\n", count, op);
+        fclose(file);
         free(cont);
         free_stack(*stack);
         exit(EXIT_FAILURE);

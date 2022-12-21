@@ -42,7 +42,7 @@ typedef struct instruction_s
 
 void p_push(stack_t **stack, unsigned int count);
 void p_pall(stack_t **stack, __attribute__((unused)) unsigned int count);
-void execute(char *cont, stack_t **stack, unsigned int count);
+void execute(char *cont, stack_t **stack, unsigned int count, FILE *file);
 void free_stack(stack_t *stack);
 void add_node(stack_t **stack, int n);
 
