@@ -28,6 +28,7 @@ void p_push(stack_t **stack, unsigned int counter)
     {
         {
             fprintf(stderr, "L%d: usage: push integer\n", counter);
+            fclose(file);
             free_stack(*stack);
             exit(EXIT_FAILURE);
         }
