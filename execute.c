@@ -30,7 +30,10 @@ void execute(char *cont, stack_t **stack, unsigned int count)
 	op = strtok(cont, " \n\t");
 
 	val = strtok(NULL, " \n\t");
-
+	if (op[0] == '#')
+	{
+		return;
+	}
 	while (opst[i].opcode && op)
 	{
 		if (strcmp(op, opst[i].opcode) == 0)
