@@ -9,7 +9,7 @@
 void p_div(stack_t **stack, unsigned int count)
 {
     stack_t *h, *z;
-    int i = 0, a;
+    int i = 0, a = 0;
 
     h = *stack;
     if (h == NULL)
@@ -36,7 +36,7 @@ void p_div(stack_t **stack, unsigned int count)
         exit(EXIT_FAILURE);
     }
     z = *stack;
-    a = (*stack)->n / (*stack)->next->n;
+    a = (*stack)->next->n / (*stack)->n;
     (*stack)->next->n = a;
     *stack = (*stack)->next;
     free(z);
