@@ -1,18 +1,24 @@
 #include "monty.h"
 
-void p_pint(stack_t **stack, unsigned int counter)
-{
-    stack_t *h;
+/**
+ * p_pint - prints the value at the top of the stack, followed by a new line
+ * @stack: stack_t
+ * @count: unsigned int
+ */
 
-    h = *stack;
-    if (h == NULL)
-    {
-        fprintf(stderr, "L%d: can't pint, stack empty\n", counter);
-        free_stack(*stack);
-        exit(EXIT_FAILURE);
-    }
-    else
-    {
-        printf("%d\n", h->n);
-    }
+void p_pint(stack_t **stack, unsigned int count)
+{
+	stack_t *h;
+
+	h = *stack;
+	if (h == NULL)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empt\n", count);
+		free_stack(*stack);
+		exit(EXIT_FAILURE);
+	}
+	else
+	{
+		printf("%d\n", h->n);
+	}
 }
