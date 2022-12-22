@@ -56,4 +56,5 @@ void p_mul(stack_t **stack, unsigned int count);
 void p_mod(stack_t **stack, unsigned int count);
 void p_pchar(stack_t **stack, unsigned int count);
 void p_pstr(stack_t **stack, unsigned int count);
+void p_rotl(stack_t **stack, unsigned int count);
 #endif
