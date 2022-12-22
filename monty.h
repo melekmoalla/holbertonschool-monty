@@ -52,4 +52,5 @@ void p_add(stack_t **stack, unsigned int count);
 void p_nop(__attribute__((unused)) stack_t **stack, __attribute__((unused)) unsigned int count);
 void p_sub(stack_t **stack, unsigned int count);
 void p_div(stack_t **stack, unsigned int count);
+void p_mul(stack_t **stack, unsigned int count)
 #endif
