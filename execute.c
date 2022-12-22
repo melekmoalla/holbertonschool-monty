@@ -22,6 +22,7 @@ void execute(char *cont, stack_t **stack, unsigned int count)
 							{"mul", p_mul},
 							{"mod", p_mod},
 							{"pchar", p_pchar},
+							{"pstr", p_pstr},
 							{NULL, NULL}};
 
 	int i = 0;
