@@ -6,7 +6,7 @@
  * @file: poiner to monty file
  * @content: line content
  */
-void execute(char *cont, stack_t **stack, unsigned int count, FILE *file)
+void execute(char *cont, stack_t **stack, unsigned int count)
 {
 
     instruction_t opst[] = {{"push", p_push},
@@ -37,7 +37,6 @@ void execute(char *cont, stack_t **stack, unsigned int count, FILE *file)
     if (op && opst[i].opcode == NULL)
     {
         fprintf(stderr, "L%d: unknown instruction %s\n", count, op);
-        fclose(file);
         free(cont);
         free_stack(*stack);
         exit(EXIT_FAILURE);

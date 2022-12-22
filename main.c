@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
         count++;
         if (read > 0)
         {
-            execute(cont, &stack, count, file);
+            execute(cont, &stack, count);
         }
         free(cont);
     }
