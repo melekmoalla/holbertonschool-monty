@@ -29,7 +29,7 @@ void p_div(stack_t **stack, unsigned int count)
         free_stack(*stack);
         exit(EXIT_FAILURE);
     }
-    if ((*stack)->next->n == 0)
+    if ((*stack)->n == 0)
     {
         fprintf(stderr, "L%d: division by zero\n", count);
         free_stack(*stack);
