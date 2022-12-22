@@ -6,7 +6,7 @@
  * @file: poiner to monty file
  * @content: line content
  */
-int execute(char *cont, stack_t **stack, unsigned int count, FILE *file)
+void execute(char *cont, stack_t **stack, unsigned int count, FILE *file)
 {
 
     instruction_t opst[] = {{"push", p_push},
