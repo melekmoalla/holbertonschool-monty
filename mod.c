@@ -29,6 +29,13 @@ void p_mod(stack_t **stack, unsigned int count)
         free_stack(*stack);
         exit(EXIT_FAILURE);
     }
+    if ((*stack)->n == 0)
+    {
+        printf("1");
+        fprintf(stderr, "L%d: division by zero\n", count);
+        free_stack(*stack);
+        exit(EXIT_FAILURE);
+    }
     z = *stack;
     a = (*stack)->n % (*stack)->next->n;
     (*stack)->next->n = a;
