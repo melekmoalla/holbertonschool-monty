@@ -2,8 +2,8 @@
 
 void p_swap(stack_t **stack, unsigned int counter)
 {
-    stack_t *prev = NULL, *next_node = NULL, *h;
-    int i = 0;
+    stack_t *h;
+    int i = 0, a;
 
     h = *stack;
     if (h == NULL)
@@ -23,12 +23,7 @@ void p_swap(stack_t **stack, unsigned int counter)
         free_stack(*stack);
         exit(EXIT_FAILURE);
     }
-    while ((*stack))
-    {
-        next_node = (*stack)->next;
-        (*stack)->next = prev;
-        prev = (*stack);
-        (*stack) = next_node;
-    }
-    *stack = prev;
+    a = (*stack)->n;
+    (*stack)->n = (*stack)->next->n;
+    (*stack)->next->n = a;
 }
