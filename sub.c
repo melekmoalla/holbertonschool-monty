@@ -25,7 +25,7 @@ void p_sub(stack_t **stack, unsigned int count)
     }
     if (i < 2)
     {
-        fprintf(stderr, "L%d: can't add, stack too short\n", count);
+        fprintf(stderr, "L%d: can't sub, stack too short", count);
         free_stack(*stack);
         exit(EXIT_FAILURE);
     }
