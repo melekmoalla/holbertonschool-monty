@@ -36,7 +36,7 @@ void p_mod(stack_t **stack, unsigned int count)
         exit(EXIT_FAILURE);
     }
     z = *stack;
-    a = (*stack)->n % (*stack)->next->n;
+    a = (*stack)->next->n % (*stack)->n;
     (*stack)->next->n = a;
     *stack = (*stack)->next;
     free(z);
