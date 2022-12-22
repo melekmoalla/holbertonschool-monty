@@ -8,7 +8,7 @@ void p_add(stack_t **stack, unsigned int counter)
     h = *stack;
     if (h == NULL)
     {
-        fprintf(stderr, "L%d: can't add, stack too shor", counter);
+        fprintf(stderr, "L%d: can't add, stack too short", counter);
         free_stack(*stack);
         exit(EXIT_FAILURE);
     }
@@ -19,7 +19,7 @@ void p_add(stack_t **stack, unsigned int counter)
     }
     if (i < 2)
     {
-        fprintf(stderr, "L%d: can't add, stack too shor", counter);
+        fprintf(stderr, "L%d: can't add, stack too short", counter);
         free_stack(*stack);
         exit(EXIT_FAILURE);
     }
