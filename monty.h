@@ -21,9 +21,9 @@ char *val;
  */
 typedef struct stack_s
 {
-    int n;
-    struct stack_s *prev;
-    struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -36,8 +36,8 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-    char *opcode;
-    void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 void execute(char *cont, stack_t **stack, unsigned int count);
@@ -45,9 +45,9 @@ void free_stack(stack_t *stack);
 void p_push(stack_t **stack, unsigned int count);
 void add_node(stack_t **stack, int n);
 void p_pall(stack_t **stack, __attribute__((unused)) unsigned int count);
-void p_pint(stack_t **stack, unsigned int counter);
-void p_pop(stack_t **stack, unsigned int counter);
-void p_swap(stack_t **stack, unsigned int counter);
-void p_add(stack_t **stack, unsigned int counter);
+void p_pint(stack_t **stack, unsigned int count);
+void p_pop(stack_t **stack, unsigned int count);
+void p_swap(stack_t **stack, unsigned int count);
+void p_add(stack_t **stack, unsigned int count);
 void p_nop(__attribute__((unused)) stack_t **stack, __attribute__((unused)) unsigned int count);
 #endif
