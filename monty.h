@@ -10,7 +10,6 @@
 
 char *val;
 
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -41,7 +40,6 @@ typedef struct instruction_s
     void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-
 int execute(char *cont, stack_t **stack, unsigned int count, FILE *file);
 void free_stack(stack_t *stack);
 void p_push(stack_t **stack, unsigned int count);
@@ -50,4 +48,5 @@ void p_pall(stack_t **stack, __attribute__((unused)) unsigned int count);
 void p_pint(stack_t **stack, unsigned int counter);
 void p_pop(stack_t **stack, unsigned int counter);
 void p_swap(stack_t **stack, unsigned int counter);
+void p_add(stack_t **stack, unsigned int counter);
 #endif
