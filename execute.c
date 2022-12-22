@@ -5,7 +5,6 @@
  * @counter: line_counter
  * @file: poiner to monty file
  * @content: line content
- * Return: no return
  */
 int execute(char *cont, stack_t **stack, unsigned int count, FILE *file)
 {
@@ -16,6 +15,7 @@ int execute(char *cont, stack_t **stack, unsigned int count, FILE *file)
                             {"pop", p_pop},
                             {"swap", p_swap},
                             {"add", p_add},
+                            {"nop", p_nop},
                             {NULL, NULL}};
 
     int i = 0;
@@ -30,7 +30,7 @@ int execute(char *cont, stack_t **stack, unsigned int count, FILE *file)
         if (strcmp(op, opst[i].opcode) == 0)
         {
             opst[i].f(stack, count);
-            return (0);
+            return;
         }
         i++;
     }
@@ -42,5 +42,4 @@ int execute(char *cont, stack_t **stack, unsigned int count, FILE *file)
         free_stack(*stack);
         exit(EXIT_FAILURE);
     }
-    return (1);
 }

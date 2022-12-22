@@ -49,4 +49,5 @@ void p_pint(stack_t **stack, unsigned int counter);
 void p_pop(stack_t **stack, unsigned int counter);
 void p_swap(stack_t **stack, unsigned int counter);
 void p_add(stack_t **stack, unsigned int counter);
+void p_nop(__attribute__((unused)) stack_t **stack, __attribute__((unused)) unsigned int count);
 #endif
