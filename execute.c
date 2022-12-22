@@ -17,6 +17,7 @@ void execute(char *cont, stack_t **stack, unsigned int count)
 							{"swap", p_swap},
 							{"add", p_add},
 							{"nop", p_nop},
+							{"sub", p_sub},
 							{NULL, NULL}};
 
 	int i = 0;
