@@ -2,7 +2,7 @@
 
 void p_add(stack_t **stack, unsigned int counter)
 {
-    stack_t *h;
+    stack_t *h, *z;
     int i = 0, a;
 
     h = *stack;
@@ -23,7 +23,9 @@ void p_add(stack_t **stack, unsigned int counter)
         free_stack(*stack);
         exit(EXIT_FAILURE);
     }
+    z = *stack;
     a = (*stack)->n + (*stack)->next->n;
     (*stack)->next->n = a;
     *stack = (*stack)->next;
+    free(z);
 }
