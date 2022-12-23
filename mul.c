@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * p_mul -  multiplies the second top element of the stack 
+ * p_mul -  multiplies the second top element of the stack
  * @stack: stack_t
  * @count: unsigned int
  */
@@ -35,3 +35,4 @@ void p_mul(stack_t **stack, unsigned int count)
 	*stack = (*stack)->next;
 	free(z);
 }
+

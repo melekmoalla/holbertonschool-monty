@@ -4,11 +4,11 @@
  * execute - executes the opcode
  * @stack: head linked list - stack
  * @count: line_counte
+ * @cont: char
  */
 
 void execute(char *cont, stack_t **stack, unsigned int count)
 {
-
 	instruction_t opst[] = {{"push", p_push},
 							{"pall", p_pall},
 							{"pint", p_pint},
@@ -30,9 +30,7 @@ void execute(char *cont, stack_t **stack, unsigned int count)
 	char *op;
 
 	op = strtok(cont, " \n\t");
-
 	val = strtok(NULL, " \n\t");
-
 	if (op && op[0] == '#')
 	{
 		return;
@@ -40,15 +38,13 @@ void execute(char *cont, stack_t **stack, unsigned int count)
 	while (opst[i].opcode && op)
 	{
 		if (strcmp(op, opst[i].opcode) == 0)
-		{
-			opst[i].f(stack, count);
+		{ opst[i].f(stack, count);
 			return;
 		}
 		i++;
 	}
 	if (op && opst[i].opcode == NULL)
-	{
-		fprintf(stderr, "L%d: unknown instruction %s\n", count, op);
+	{ fprintf(stderr, "L%d: unknown instruction %s\n", count, op);
 		free(cont);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
