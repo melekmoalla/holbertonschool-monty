@@ -1,26 +1,30 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "monty.h"
+
+/**
+ * p_pchar - prints the char at the top of the stack, followed by a new line
+ * @stack: head linked list - stack
+ * @count: line_counte
+ */
 
 void p_pchar(stack_t **stack, unsigned int count)
 {
-    // check if stack is empty
-    if (stack == NULL || *stack == NULL)
-    {
-        fprintf(stderr, "L%u: can't pchar, stack empty\n", count);
-        exit(EXIT_FAILURE);
-    }
 
-    // retrieve value at top of stack
-    int val = (*stack)->n;
+	if (stack == NULL || *stack == NULL)
+	{
+		fprintf(stderr, "L%u: can't pchar, stack empty\n", count);
+		exit(EXIT_FAILURE);
+	}
 
-    // check if value is in ASCII range
-    if (val < 0 || val > 127)
-    {
-        fprintf(stderr, "L%u: can't pchar, value out of range\n", count);
-        exit(EXIT_FAILURE);
-    }
 
-    // print character corresponding to value
-    printf("%c\n", val);
+	int val = (*stack)->n;
+
+
+	if (val < 0 || val > 127)
+	{
+		fprintf(stderr, "L%u: can't pchar, value out of range\n", count);
+		exit(EXIT_FAILURE);
+	}
+
+
+	printf("%c\n", val);
 }

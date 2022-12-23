@@ -13,7 +13,7 @@ void p_pint(stack_t **stack, unsigned int count)
 	h = *stack;
 	if (h == NULL)
 	{
-		fprintf(stderr, "L%d: can't pint, stack empt\n", count);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", count);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}

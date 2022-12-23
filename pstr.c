@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * p_pall - prints all the values on the stack
+ * p_pstr - prints the string starting at the top of the stack.
  * @stack: stack_t
  * @count: unsigned int
  */
@@ -9,26 +9,26 @@
 void p_pstr(stack_t **stack, __attribute__((unused)) unsigned int count)
 {
 
-    if (stack == NULL || *stack == NULL)
-    {
-        putchar('\n');
-        return;
-    }
+	if (stack == NULL || *stack == NULL)
+	{
+		putchar('\n');
+		return;
+	}
 
-    stack_t *current = *stack;
+	stack_t *current = *stack;
 
-    while (current != NULL)
-    {
+	while (current != NULL)
+	{
 
-        if (current->n < 32 || current->n > 126 || current->n == 0)
-        {
-            break;
-        }
+		if (current->n < 32 || current->n > 126 || current->n == 0)
+		{
+			break;
+		}
 
-        putchar(current->n);
+		putchar(current->n);
 
-        current = current->next;
-    }
+		current = current->next;
+	}
 
-    putchar('\n');
+	putchar('\n');
 }

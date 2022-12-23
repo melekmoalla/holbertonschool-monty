@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * p_rotr - prints the string starting at the top of the stack
+ * @stack: stack_t
+ * @count: unsigned int
+ */
+
 void p_rotr(stack_t **stack, __attribute__((unused)) unsigned int count)
 {
     int i = 0;
@@ -10,7 +16,7 @@ void p_rotr(stack_t **stack, __attribute__((unused)) unsigned int count)
     }
 
     stack_t *last = *stack, *h = *stack;
-    
+
     while (h)
     {
         h = h->next;
