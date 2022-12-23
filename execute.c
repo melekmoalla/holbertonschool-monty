@@ -24,6 +24,7 @@ void execute(char *cont, stack_t **stack, unsigned int count)
 							{"pchar", p_pchar},
 							{"pstr", p_pstr},
 							{"rotl", p_rotl},
+							{"rotr", p_rotr},
 							{NULL, NULL}};
 
 	int i = 0;
@@ -32,9 +33,9 @@ void execute(char *cont, stack_t **stack, unsigned int count)
 	op = strtok(cont, " \n\t");
 
 	val = strtok(NULL, " \n\t");
+
 	if (op[0] == '#')
 	{
-		return;
 	}
 	while (opst[i].opcode && op)
 	{
