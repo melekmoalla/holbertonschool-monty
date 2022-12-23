@@ -14,10 +14,9 @@ void p_rotl(stack_t **stack, __attribute__((unused)) unsigned int count)
 
     if (stack == NULL || *stack == NULL)
     {
-        putchar('\n');
         return;
     }
-    
+
     while (h->next != NULL)
     {
         a = h->n;
