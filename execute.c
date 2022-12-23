@@ -28,15 +28,12 @@ void execute(char *cont, stack_t **stack, unsigned int count)
 
 	int i = 0;
 	char *op;
-	char *a;
-
-	a = strtok(cont, " \n\t");
 
 	op = strtok(cont, " \n\t");
 
 	val = strtok(NULL, " \n\t");
 
-	if (a[0] == '#')
+	if (op && op[0] == '#')
 	{
 		return;
 	}
