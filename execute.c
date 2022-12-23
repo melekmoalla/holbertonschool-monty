@@ -28,13 +28,17 @@ void execute(char *cont, stack_t **stack, unsigned int count)
 
 	int i = 0;
 	char *op;
+	char *a;
+
+	a = strtok(cont, " \n\t");
 
 	op = strtok(cont, " \n\t");
 
 	val = strtok(NULL, " \n\t");
 
-	if (op[0] == '#')
+	if (a[0] == '#')
 	{
+		return;
 	}
 	while (opst[i].opcode && op)
 	{
