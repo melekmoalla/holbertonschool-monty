@@ -1,3 +1,7 @@
+# C - Stacks, Queues - LIFO, FIFO
+
+About: In this project, we created a simple interpreter for Monty ByteCodes. The interpreter reads a bytecode file and executes the bytecode commands.
+
 # Monty
 
 Monty is a simple stack-based programming language that is interpreted by a virtual machine. It is inspired by the Forth programming language, but is designed to be simpler and easier to learn.
